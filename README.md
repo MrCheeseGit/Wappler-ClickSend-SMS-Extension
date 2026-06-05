@@ -170,8 +170,24 @@ Working Abatanado-style payload (no `from`):
 
 ---
 
+## Works well with Generate Auth Code
+
+Pair this extension with **[Generate Auth Code for Wappler](https://github.com/MrCheeseGit/Wappler-Generate-Auth-Code-Extension)** for SMS verification flows:
+
+```
+Generate Auth Code  →  ClickSend Send SMS
+```
+
+1. **Generate Auth Code** — e.g. numeric, length `6`
+2. **ClickSend Send SMS** — bind `body` to include `{{authCode.code}}` and `to` to the user’s number
+
+Typical uses: registration PIN, login OTP, password-reset codes sent by text. Both extensions appear under **Mr Cheese** in Server Connect.
+
+---
+
 ## Links
 
+- [Generate Auth Code extension (GitHub)](https://github.com/MrCheeseGit/Wappler-Generate-Auth-Code-Extension)
 - [ClickSend SMS API](https://developers.clicksend.com/docs/messaging/sms)
 - [Send SMS Campaign](https://developers.clicksend.com/docs/messaging/sms-campaigns/other/send-sms-campaign)
 
