@@ -43,7 +43,7 @@ cp clicksend_sendsms.hjson clicksend_calculateprice.hjson clicksend_sendcampaign
 
 **Quit Wappler completely and restart.**
 
-**Upgrading from 1.0.0:** copy the same files again (especially `clicksend.js`), restart Wappler and the Node server.
+**Upgrading:** copy the same files again (especially `clicksend.js`), then restart Wappler and the Node server.
 
 Actions appear under **Mr Cheese**:
 
@@ -140,7 +140,7 @@ ClickSend can return **HTTP 200** and `response_code: SUCCESS` while **queuing z
 | `INVALID_SENDER_ID` | **From** is not registered in your ClickSend account | Leave **From** empty (shared number, like a plain API connector step), or register the alpha tag / number in ClickSend first |
 | `queued_count: 0` | Same as above, or invalid numbers | Fix **From** or **To** (E.164, e.g. `+351...`) |
 
-Working Abatanado-style payload (no `from`):
+Minimal working payload (no `from`):
 
 ```json
 {
