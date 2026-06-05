@@ -62,7 +62,7 @@ Wappler installs `axios` via `usedModules` in the HJSON files.
 | Mode | Use |
 |------|-----|
 | **Single recipient** | One number via data picker (`{{$_GET.phone}}`, etc.) |
-| **Send to query results** | Bind a prior **Database Query** step; pick the **phone column** (same pattern as [Wap-Lastic](../Wap-Lastic-Extension)) |
+| **Send to query results** | Bind a prior **Database Query** step; pick the **phone column** (query-first pattern) |
 
 Uses `POST /v3/sms/send`. Sends up to **1000 messages per API call**; larger lists are split into batches automatically.
 
