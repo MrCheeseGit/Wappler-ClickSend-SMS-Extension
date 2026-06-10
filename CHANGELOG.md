@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2] - 2026-06-04
+
+### Documentation
+
+- **README** — `axios` dependency section: `npm install`, commit `package-lock.json`, and `MODULE_NOT_FOUND` on Docker/`npm ci` deploys.
+
 ## [1.0.1] - 2026-06-05
 
 ### Added

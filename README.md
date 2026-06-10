@@ -3,7 +3,7 @@
 Send SMS via [ClickSend](https://www.clicksend.com/) from Wappler Server Connect (Node): single messages, bulk send from a database query, price preview, and SMS campaigns to a ClickSend contact list.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.0.1-green)
+![Version](https://img.shields.io/badge/version-1.0.2-green)
 
 Built by **[Mr Cheese](https://www.mrcheese.co.uk)**.
 
@@ -14,6 +14,7 @@ Built by **[Mr Cheese](https://www.mrcheese.co.uk)**.
 - Wappler **Server Connect (Node)**
 - ClickSend account with API access
 - Environment variables configured in the project (see below)
+- **`axios`** npm package in the project (see [Dependencies](#dependencies-axios) below)
 
 ---
 
@@ -51,7 +52,27 @@ Actions appear under **Mr Cheese**:
 - **ClickSend Calculate SMS Price**
 - **ClickSend SMS Campaign**
 
-Wappler installs `axios` via `usedModules` in the HJSON files.
+### Dependencies (`axios`)
+
+`clicksend.js` uses **`axios`** to call the ClickSend REST API. Each action HJSON declares it under `usedModules` so Wappler can add it to your project — but you must ensure it is **actually installed** before deploy.
+
+**In your Wappler project root:**
+
+```bash
+npm install axios
+```
+
+Then **commit** both `package.json` and **`package-lock.json`**.
+
+| Symptom | Cause |
+|---------|--------|
+| `500` · `MODULE_NOT_FOUND` · `Cannot find module 'axios'` | `axios` missing from `node_modules` on the server |
+| Works locally, fails on Docker/production | `package-lock.json` out of sync — `npm ci` installs only what the lockfile lists |
+| `axios` in `package.json` but still fails after deploy | Lockfile never updated — run `npm install` locally, commit lockfile, rebuild image |
+
+**Docker / WDP deploys** almost always run `npm ci --omit=dev`. If `axios` is not in the lockfile, it will not be in the container even when it appears in `package.json`.
+
+After `npm install`, restart the Node server (or redeploy).
 
 ---
 
