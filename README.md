@@ -35,6 +35,12 @@ Restart the Node server after changing env values.
 
 ## Installation
 
+### Mr Cheese Extension Installer (recommended)
+
+This repo ships **`wappler-install.json`** at the root. Use the **[Mr Cheese Extension Installer](https://www.mrcheese.co.uk/extensions/install)** — select **ClickSend SMS**, enable **Use wappler-install.json from the repository**, enter your Wappler project path, and run the generated copy script locally.
+
+### Manual install
+
 Copy into your Wappler project:
 
 ```bash
