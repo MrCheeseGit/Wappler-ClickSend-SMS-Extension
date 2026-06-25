@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "clicksend",
+  "name": "ClickSend SMS",
+  "version": "1.0.5",
+  "cloneDir": "Wappler-ClickSend-SMS-Extension",
+  "hasServerConnect": true,
+  "hasAppConnect": false,
+  "readme": "https://github.com/MrCheeseGit/Wappler-ClickSend-SMS-Extension#installation",
+  "serverConnect": {
+    "directories": [
+      "extensions/server_connect/modules",
+      "lib/modules"
+    ],
+    "copy": [
+      {
+        "src": "clicksend.js",
+        "dest": "lib/modules/clicksend.js"
+      },
+      {
+        "src": "clicksend.js",
+        "dest": "extensions/server_connect/modules/clicksend.js"
+      },
+      {
+        "src": "clicksend_sendsms.hjson",
+        "dest": "extensions/server_connect/modules/clicksend_sendsms.hjson"
+      },
+      {
+        "src": "clicksend_calculateprice.hjson",
+        "dest": "extensions/server_connect/modules/clicksend_calculateprice.hjson"
+      },
+      {
+        "src": "clicksend_sendcampaign.hjson",
+        "dest": "extensions/server_connect/modules/clicksend_sendcampaign.hjson"
+      }
+    ],
+    "notes": [
+      "Copy clicksend.js to both lib/modules/ and extensions/server_connect/modules/.",
+      "Set CLICKSEND_* env vars in Wappler \u2014 see the repo README.",
+      "Quit Wappler completely and restart."
+    ]
+  }
+}

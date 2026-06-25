@@ -1,0 +1,18 @@
+{
+  "exec": {
+    "steps": [
+      {
+        "name": "sendCampaign",
+        "module": "clicksend",
+        "action": "sendcampaign",
+        "options": {
+          "list_id": "12345",
+          "name": "Monthly newsletter SMS",
+          "body": "Hi there. Visit us this week. Reply STOP to opt out.",
+          "source": "wappler"
+        },
+        "output": true
+      }
+    ]
+  }
+}

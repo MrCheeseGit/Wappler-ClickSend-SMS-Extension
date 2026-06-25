@@ -1,0 +1,25 @@
+{
+  "name": "wappler-clicksend-sms",
+  "version": "1.0.5",
+  "description": "Wappler Server Connect extension for ClickSend SMS: single send, bulk from query, price check, and campaigns",
+  "main": "clicksend.js",
+  "homepage": "https://www.mrcheese.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrCheeseGit/Wappler-ClickSend-SMS-Extension.git"
+  },
+  "keywords": [
+    "wappler",
+    "server-connect",
+    "extension",
+    "clicksend",
+    "sms",
+    "mrcheese"
+  ],
+  "author": "Mr Cheese",
+  "license": "SEE LICENSE IN LICENSE",
+  "wappler": {
+    "module": "clicksend",
+    "version": "1.0.5"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "$_GET": [
+      { "type": "text", "name": "phone" },
+      { "type": "text", "name": "message" }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "sendSms",
+        "module": "clicksend",
+        "action": "sendsms",
+        "options": {
+          "mode": "single",
+          "to": "{{$_GET.phone}}",
+          "body": "{{$_GET.message}}",
+          "source": "wappler"
+        },
+        "output": true
+      }
+    ]
+  }
+}

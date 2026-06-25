@@ -1,0 +1,44 @@
+{
+  "exec": {
+    "steps": [
+      {
+        "name": "contactsQuery",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "your_connection_name",
+          "sql": {
+            "type": "select",
+            "table": "contacts",
+            "columns": ["id", "name", "mobile", "active"],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "field": "active",
+                  "operator": "equal",
+                  "value": 1
+                }
+              ]
+            }
+          }
+        },
+        "output": true,
+        "outputType": "array"
+      },
+      {
+        "name": "sendBulkSms",
+        "module": "clicksend",
+        "action": "sendsms",
+        "options": {
+          "mode": "fromQuery",
+          "sourceData": "{{contactsQuery}}",
+          "phoneColumn": "mobile",
+          "body": "Hello from our app. Reply STOP to opt out.",
+          "source": "wappler"
+        },
+        "output": true
+      }
+    ]
+  }
+}
