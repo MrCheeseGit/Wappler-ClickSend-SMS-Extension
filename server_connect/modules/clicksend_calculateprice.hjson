@@ -1,0 +1,172 @@
+{
+  "type": "clicksend_calculateprice",
+  "module": "clicksend",
+  "action": "calculateprice",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "ClickSend Calculate SMS Price",
+  "icon": "fas fa-lg fa-calculator comp-data",
+  "outputType": "object",
+  "dataScheme": [
+    {
+      "name": "success",
+      "type": "boolean"
+    },
+    {
+      "name": "http_code",
+      "type": "number"
+    },
+    {
+      "name": "data",
+      "type": "object"
+    },
+    {
+      "name": "error",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Settings",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "clickSendPrice",
+          "help": "The name for this action step"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        },
+        {
+          "name": "mode",
+          "optionName": "mode",
+          "title": "Recipients",
+          "type": "droplist",
+          "values": [
+            {
+              "title": "Single recipient",
+              "value": "single",
+              "show": [
+                "to"
+              ],
+              "hide": [
+                "sourceData",
+                "phoneColumn"
+              ]
+            },
+            {
+              "title": "Query results",
+              "value": "fromQuery",
+              "show": [
+                "sourceData",
+                "phoneColumn"
+              ],
+              "hide": [
+                "to"
+              ]
+            }
+          ],
+          "defaultValue": "single"
+        }
+      ]
+    },
+    {
+      "group": "Recipients",
+      "variables": [
+        {
+          "name": "to",
+          "optionName": "to",
+          "title": "To (phone number)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "sourceData",
+          "optionName": "sourceData",
+          "title": "Query results",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "phoneColumn",
+          "optionName": "phoneColumn",
+          "title": "Phone column",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        }
+      ]
+    },
+    {
+      "group": "Message",
+      "variables": [
+        {
+          "name": "body",
+          "optionName": "body",
+          "title": "Message body",
+          "type": "textarea",
+          "required": true,
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "from",
+          "optionName": "from",
+          "title": "From (Sender ID)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional. Must be registered in ClickSend. Invalid senders are not queued — leave empty for shared number."
+        },
+        {
+          "name": "schedule",
+          "optionName": "schedule",
+          "title": "Schedule (Unix time)",
+          "type": "numberorstring",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "shorten_urls",
+          "optionName": "shorten_urls",
+          "title": "Shorten URLs",
+          "type": "boolean",
+          "defaultValue": false
+        },
+        {
+          "name": "custom_string",
+          "optionName": "custom_string",
+          "title": "Custom string",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "source",
+          "optionName": "source",
+          "title": "Source label",
+          "type": "text",
+          "defaultValue": "wappler"
+        }
+      ]
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "axios": "^1.7.0"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 # Changelog
 
-## 1.0.7
+## 1.0.8
 
-Current release of **ClickSend SMS**. See [README](README.md) for features, installation, and usage.
+Current release of **ClickSend SMS**. Wappler npm install layout (`server_connect/modules/`, `includes/`, JSON-style HJSON). See [README](README.md).
 
 Licensed under [Mr Cheese Extension License v1.0](https://www.mrcheese.co.uk/extension-license). Earlier MIT releases, if any, remain under MIT at their historical version tags.

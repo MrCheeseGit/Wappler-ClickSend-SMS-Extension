@@ -14,23 +14,23 @@
     ],
     "copy": [
       {
-        "src": "clicksend.js",
+        "src": "server_connect/modules/clicksend.js",
         "dest": "lib/modules/clicksend.js"
       },
       {
-        "src": "clicksend.js",
+        "src": "server_connect/modules/clicksend.js",
         "dest": "extensions/server_connect/modules/clicksend.js"
       },
       {
-        "src": "clicksend_sendsms.hjson",
+        "src": "server_connect/modules/clicksend_sendsms.hjson",
         "dest": "extensions/server_connect/modules/clicksend_sendsms.hjson"
       },
       {
-        "src": "clicksend_calculateprice.hjson",
+        "src": "server_connect/modules/clicksend_calculateprice.hjson",
         "dest": "extensions/server_connect/modules/clicksend_calculateprice.hjson"
       },
       {
-        "src": "clicksend_sendcampaign.hjson",
+        "src": "server_connect/modules/clicksend_sendcampaign.hjson",
         "dest": "extensions/server_connect/modules/clicksend_sendcampaign.hjson"
       }
     ],

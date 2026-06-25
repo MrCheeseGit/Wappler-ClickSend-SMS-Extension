@@ -70,11 +70,11 @@ Run from your **Wappler project root** (the folder that contains `package.json`)
 ```bash
 git clone https://github.com/MrCheeseGit/Wappler-ClickSend-SMS-Extension.git ../Wappler-ClickSend-SMS-Extension
 
-cp ../Wappler-ClickSend-SMS-Extension/clicksend.js lib/modules/
-cp ../Wappler-ClickSend-SMS-Extension/clicksend.js extensions/server_connect/modules/
-cp ../Wappler-ClickSend-SMS-Extension/clicksend_sendsms.hjson extensions/server_connect/modules/
-cp ../Wappler-ClickSend-SMS-Extension/clicksend_calculateprice.hjson extensions/server_connect/modules/
-cp ../Wappler-ClickSend-SMS-Extension/clicksend_sendcampaign.hjson extensions/server_connect/modules/
+cp ../Wappler-ClickSend-SMS-Extension/server_connect/modules/clicksend.js lib/modules/
+cp ../Wappler-ClickSend-SMS-Extension/server_connect/modules/clicksend.js extensions/server_connect/modules/
+cp ../Wappler-ClickSend-SMS-Extension/server_connect/modules/clicksend_sendsms.hjson extensions/server_connect/modules/
+cp ../Wappler-ClickSend-SMS-Extension/server_connect/modules/clicksend_calculateprice.hjson extensions/server_connect/modules/
+cp ../Wappler-ClickSend-SMS-Extension/server_connect/modules/clicksend_sendcampaign.hjson extensions/server_connect/modules/
 ```
 
 **Quit Wappler completely and restart.**

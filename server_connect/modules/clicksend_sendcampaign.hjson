@@ -1,0 +1,134 @@
+{
+  "type": "clicksend_sendcampaign",
+  "module": "clicksend",
+  "action": "sendcampaign",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "ClickSend SMS Campaign",
+  "icon": "fas fa-lg fa-bullhorn comp-data",
+  "outputType": "object",
+  "dataScheme": [
+    {
+      "name": "success",
+      "type": "boolean"
+    },
+    {
+      "name": "http_code",
+      "type": "number"
+    },
+    {
+      "name": "data",
+      "type": "object"
+    },
+    {
+      "name": "error",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Settings",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "clickSendCampaign",
+          "help": "The name for this action step"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "group": "Campaign",
+      "variables": [
+        {
+          "name": "list_id",
+          "optionName": "list_id",
+          "title": "ClickSend list ID",
+          "type": "numberorstring",
+          "required": true,
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Contact list ID from your ClickSend dashboard (not from a Wappler query). Create lists in ClickSend first."
+        },
+        {
+          "name": "name",
+          "optionName": "name",
+          "title": "Campaign name",
+          "type": "text",
+          "required": true,
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "body",
+          "optionName": "body",
+          "title": "Message body",
+          "type": "textarea",
+          "required": true,
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Marketing messages need an opt-out (Reply STOP or StopMsg.me placeholder per ClickSend)."
+        },
+        {
+          "name": "from",
+          "optionName": "from",
+          "title": "From (Sender ID)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional. Must be registered in ClickSend (+E.164 or approved alpha tag). Invalid senders fail — leave empty for shared number where allowed."
+        },
+        {
+          "name": "schedule",
+          "optionName": "schedule",
+          "title": "Schedule (Unix time)",
+          "type": "numberorstring",
+          "serverDataBindings": true,
+          "defaultValue": ""
+        },
+        {
+          "name": "url_to_shorten",
+          "optionName": "url_to_shorten",
+          "title": "URL to shorten",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional URL appended shortened to the message"
+        },
+        {
+          "name": "sendersJson",
+          "optionName": "sendersJson",
+          "title": "Senders JSON (advanced)",
+          "type": "textarea",
+          "defaultValue": "",
+          "help": "Optional JSON array for per-country senders. Example: [{\"recipient_country_code\":\"GB\",\"sender_id\":\"MyBrand\"}]"
+        },
+        {
+          "name": "source",
+          "optionName": "source",
+          "title": "Source label",
+          "type": "text",
+          "defaultValue": "wappler"
+        }
+      ]
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "axios": "^1.7.0"
+    }
+  }
+}
