@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.5
+## 1.0.6
 
 Current release of **ClickSend SMS**. See [README](README.md) for features, installation, and usage.
 
