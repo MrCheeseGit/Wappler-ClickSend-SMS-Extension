@@ -4,7 +4,7 @@
 Send SMS via [ClickSend](https://www.clicksend.com/) from Wappler Server Connect (Node): single messages, bulk send from a database query, price preview, and SMS campaigns to a ClickSend contact list.
 
 [![License: Mr Cheese Extension v1.0](https://img.shields.io/badge/License-Mr%20Cheese%20Extension%20v1.0-blue.svg)](https://www.mrcheese.co.uk/extension-license)
-![Version](https://img.shields.io/badge/version-1%2E0%2E9-green)
+![Version](https://img.shields.io/badge/version-1%2E0%2E10-green)
 
 Built by **[Mr Cheese](https://www.mrcheese.co.uk)**.
 
@@ -36,14 +36,12 @@ Restart the Node server after changing env values.
 
 ## Installation
 
-Pick **one** install path and follow it completely:
+| Path | |
+|------|--|
+| **npm** | Wappler Project Settings → Extensions (`wappler-clicksend-sms`) |
+| **Git** | [Extension Installer](https://www.mrcheese.co.uk/extensions/install) or manual copy below |
 
-| Path | Best for |
-|------|----------|
-| **Git** (recommended) | Most reliable; uses `git clone` + copy from the repo |
-| **npm** | You already use Wappler Project Settings → Extensions |
-
-Both paths copy files into `extensions/` and `lib/modules/`. The npm path also requires verifying `node_modules/wappler-clicksend-sms` exists **before** you run any copy commands.
+Git manual copy installs into `extensions/` and `lib/modules/`.
 
 ### Git install — Extension Installer (recommended)
 
