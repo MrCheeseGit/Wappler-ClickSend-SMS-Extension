@@ -1,24 +1,10 @@
 # ClickSend SMS (Wappler Server Connect)
 
-> ## ⚠️ NPM users — please read first (important)
->
-> Mr Cheese extensions were built for **Git copy install** first. Wappler's **npm** lane (Project Settings → Extensions) puts the package in `node_modules` but **does not automatically copy** Server Connect modules into your project folders. **Project Updater alone is not enough** for this extension.
->
-> **If you use npm, follow the full [npm install](#npm-install-wappler-project-settings) section below.** Quick summary:
->
-> 1. Add this extension in **Wappler → Project Settings → Extensions**, then run **`npm install`** in your project root.
-> 2. **Verify** the package landed: `ls node_modules/wappler-clicksend-sms/package.json` (if this fails, fix registration before copying anything).
-> 3. Run the copy script from the **[Mr Cheese npm install assistant](https://www.mrcheese.co.uk/extensions/install/npm)** — choose **Server Connect** — into `extensions/` and `lib/modules/`.
-> 4. **Quit Wappler completely** (including the tray icon) and reopen your project.
->
-> Mr Cheese is working on a combined solution and has proposed **[`wappler-install.json`](https://github.com/MrCheeseGit/Wappler-Git-Extension-Manifest-Standard)** so install tools (and hopefully Wappler itself) can deploy extensions the same way from Git or npm. Until then, sorry for the extra steps — this is one reason these extensions were never intended to rely on npm alone.
->
-> **Prefer Git?** Use the [Git Extension Installer](https://www.mrcheese.co.uk/extensions/install) — the most complete path, no npm required.
 
 Send SMS via [ClickSend](https://www.clicksend.com/) from Wappler Server Connect (Node): single messages, bulk send from a database query, price preview, and SMS campaigns to a ClickSend contact list.
 
 [![License: Mr Cheese Extension v1.0](https://img.shields.io/badge/License-Mr%20Cheese%20Extension%20v1.0-blue.svg)](https://www.mrcheese.co.uk/extension-license)
-![Version](https://img.shields.io/badge/version-1%2E0%2E5-green)
+![Version](https://img.shields.io/badge/version-1%2E0%2E9-green)
 
 Built by **[Mr Cheese](https://www.mrcheese.co.uk)**.
 
@@ -90,20 +76,9 @@ Actions appear under **Mr Cheese**:
 
 ### npm install (Wappler Project Settings)
 
-Use this when you register the extension through **Wappler → Project Settings → Extensions**. The npm package registers the extension in Wappler but **does not copy runtime files** into your project folders.
-
-1. **Register in Wappler** — Project Settings → Extensions → Add → enter `wappler-clicksend-sms` or this repository's GitHub URL.
-2. **Install dependencies** — from your Wappler project root (folder with `package.json`):
-   ```bash
-   npm install
-   ```
-3. **Verify before copying** (required):
-   ```bash
-   ls node_modules/wappler-clicksend-sms/package.json
-   ```
-   If this command fails, stop here. The extension is missing from `.wappler/project.json` or `npm install` did not succeed. **Do not** run copy commands until `node_modules` contains the package.
-4. **Copy files into your project** — open the **[npm install assistant](https://www.mrcheese.co.uk/extensions/install/npm)**, select **ClickSend SMS**, choose **Server Connect**, copy the generated script, and run it from your project root.
-5. **Quit Wappler completely** (tray icon too) and reopen your project.
+1. **Wappler** → Project Settings → Extensions → Add → `wappler-clicksend-sms`
+2. From your project root: `npm install`
+3. **Quit Wappler completely** and reopen your project.
 
 #### Local `file:` development (optional)
 
@@ -113,7 +88,8 @@ Use this when you register the extension through **Wappler → Project Settings 
 }
 ```
 
-After you change extension source, run `npm install wappler-clicksend-sms` again in the project root, run the npm install assistant copy script and restart Wappler.
+After you change extension source, run `npm install` again, then Project Updater if needed, and restart Wappler.
+
 ### Dependencies (`axios`)
 
 `clicksend.js` uses **`axios`** to call the ClickSend REST API. Each action HJSON declares it under `usedModules` so Wappler can add it to your project — but you must ensure it is **actually installed** before deploy.
