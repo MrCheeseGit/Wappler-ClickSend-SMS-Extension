@@ -4,7 +4,7 @@
 Send SMS via [ClickSend](https://www.clicksend.com/) from Wappler Server Connect (Node): single messages, bulk send from a database query, price preview, and SMS campaigns to a ClickSend contact list.
 
 [![License: Mr Cheese Extension v1.0](https://img.shields.io/badge/License-Mr%20Cheese%20Extension%20v1.0-blue.svg)](https://www.mrcheese.co.uk/extension-license)
-![Version](https://img.shields.io/badge/version-1%2E0%2E10-green)
+![Version](https://img.shields.io/badge/version-1%2E0%2E11-green)
 
 Built by **[Mr Cheese](https://www.mrcheese.co.uk)**.
 
